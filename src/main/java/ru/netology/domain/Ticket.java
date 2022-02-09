@@ -18,11 +18,6 @@ public class Ticket implements Comparable<Ticket> {
         this.travelTime = travelTime;
     }
 
-    @Override
-    public int compareTo(Ticket o) {
-        return this.price - o.price;
-    }
-
     public int getId() {
         return id;
     }
@@ -61,5 +56,17 @@ public class Ticket implements Comparable<Ticket> {
 
     public void setTravelTime(int travelTime) {
         this.travelTime = travelTime;
+    }
+
+    @Override
+    public int compareTo(Ticket o) {
+        if (this.price==o.price){
+            return 0;
+        } else if (this.price<o.price){
+            return -1;
+        } else {
+            return 1;
+        }
+//        return this.price - o.price;
     }
 }

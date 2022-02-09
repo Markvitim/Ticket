@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class TicketTest {
     private Ticket first = new Ticket(1, 8000, "DME", "KJA", 4);
     private Ticket second = new Ticket(2, 3000, "VKO", "LED", 2);
@@ -16,12 +14,11 @@ class TicketTest {
     private Ticket six = new Ticket(6, 8600, "VKO", "KJA", 4);
 
     @Test
-    public void shouldSortByPrice(){
-        Ticket[] expected =new Ticket[]{four, third, second, first, five, six};
+    public void shouldSortByPrice() {
+        Ticket[] expected = new Ticket[]{four, third, second, first, five, six};
         Ticket[] actual = new Ticket[]{first, second, third, four, five, six};
 
         Arrays.sort(actual);
         Assertions.assertArrayEquals(expected, actual);
     }
-
 }

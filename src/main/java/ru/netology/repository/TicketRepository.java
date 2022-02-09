@@ -1,6 +1,7 @@
 package ru.netology.repository;
 
 import ru.netology.domain.Ticket;
+import ru.netology.domain.TravelTimeComparator;
 
 public class TicketRepository {
     private Ticket[] tickets = new Ticket[0];
