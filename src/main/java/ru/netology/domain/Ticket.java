@@ -1,5 +1,7 @@
 package ru.netology.domain;
 
+import jdk.jfr.DataAmount;
+
 public class Ticket implements Comparable<Ticket> {
     private int id;
     private int price;
@@ -69,4 +71,5 @@ public class Ticket implements Comparable<Ticket> {
         }
 //        return this.price - o.price;
     }
+
 }
