@@ -1,7 +1,6 @@
 package ru.netology.repository;
 
 import ru.netology.domain.Ticket;
-import ru.netology.domain.TravelTimeComparator;
 
 public class TicketRepository {
     private Ticket[] tickets = new Ticket[0];
@@ -14,19 +13,21 @@ public class TicketRepository {
     }
 
     public void removeById(int idToRemove) {
-        Ticket[] tmp = new Ticket[tickets.length - 1];
-        int copyTo = 0;
-        for (Ticket ticket : tickets) {
-            if (ticket.getId() != idToRemove) {
-                tmp[copyTo] = ticket;
-                copyTo++;
+        if (tickets.length != 0) {
+            Ticket[] tmp = new Ticket[tickets.length - 1];
+            int copyTo = 0;
+            for (Ticket ticket : tickets) {
+                if (ticket.getId() != idToRemove) {
+                    tmp[copyTo] = ticket;
+                    copyTo++;
+                }
             }
+            tickets = tmp;
         }
-        tickets = tmp;
     }
 
     public Ticket[] findAll() {
-        return tickets;
+        return this.tickets;
     }
 
 }
