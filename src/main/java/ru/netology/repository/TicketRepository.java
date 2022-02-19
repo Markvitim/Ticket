@@ -13,15 +13,17 @@ public class TicketRepository {
     }
 
     public void removeById(int idToRemove) {
-        Ticket[] tmp = new Ticket[tickets.length - 1];
-        int copyTo = 0;
-        for (Ticket ticket : tickets) {
-            if (ticket.getId() != idToRemove) {
-                tmp[copyTo] = ticket;
-                copyTo++;
+        if (tickets.length != 0) {
+            Ticket[] tmp = new Ticket[tickets.length - 1];
+            int copyTo = 0;
+            for (Ticket ticket : tickets) {
+                if (ticket.getId() != idToRemove) {
+                    tmp[copyTo] = ticket;
+                    copyTo++;
+                }
             }
+            tickets = tmp;
         }
-        tickets = tmp;
     }
 
     public Ticket[] findAll() {

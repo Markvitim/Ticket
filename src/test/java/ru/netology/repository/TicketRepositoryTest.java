@@ -13,27 +13,35 @@ class TicketRepositoryTest {
     private Ticket four = new Ticket(4, 2500, "VKO", "LED", 2);
     private Ticket five = new Ticket(5, 8500, "DME", "KJA", 4);
     private Ticket six = new Ticket(6, 8600, "VKO", "KJA", 4);
+    private Ticket eleven = new Ticket(11, 2800, "VKO", "LED", 1);
+    private Ticket ten = new Ticket(10, 2500, "VKO", "LED", 2);
+    private Ticket nine = new Ticket(9, 8500, "DME", "KJA", 4);
+    private Ticket fifteen = new Ticket(15, 8600, "VKO", "KJA", 4);
 
     @BeforeEach
     public void setUp() {
         repository.save(first);
-        repository.save(second);
-        repository.save(third);
-        repository.save(four);
         repository.save(five);
+        repository.save(four);
+        repository.save(third);
+        repository.save(second);
         repository.save(six);
+        repository.save(fifteen);
+        repository.save(nine);
+        repository.save(ten);
+        repository.save(eleven);
     }
 
     @Test
     public void shouldRemoveById() {
         repository.removeById(6);
-        Ticket[] expected = new Ticket[]{first, second, third, four, five};
+        Ticket[] expected = new Ticket[]{first, five, four, third, second, fifteen, nine, ten, eleven};
         Assertions.assertArrayEquals(expected, repository.findAll());
     }
 
     @Test
     public void shouldFindAll() {
-        Ticket[] expected = new Ticket[]{first, second, third, four, five, six};
+        Ticket[] expected = new Ticket[]{first, five, four, third, second, six, fifteen, nine, ten, eleven};
         Assertions.assertArrayEquals(expected, repository.findAll());
     }
 }
