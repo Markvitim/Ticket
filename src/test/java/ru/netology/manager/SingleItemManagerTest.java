@@ -5,8 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Ticket;
 
-import java.util.Arrays;
-
 public class SingleItemManagerTest {
     private TicketManager manager = new TicketManager();
     private Ticket eleven = new Ticket(11, 2800, "VKO", "LED", 1);
@@ -37,11 +35,11 @@ public class SingleItemManagerTest {
         Assertions.assertArrayEquals(expected, manager.shouldGetAll("VKO", "KJA"));
     }
 
-    @Test
-    public void shouldSortByPrice() {
-        Ticket[] expected = new Ticket[]{eleven};
-        Ticket[] actual = manager.shouldGetAll("VKO", "LED");
-//        Arrays.sort(actual);
-        Assertions.assertArrayEquals(expected, actual);
-    }
+//    @Test
+//    public void shouldSortByPrice() {
+//        Ticket[] expected = new Ticket[]{eleven};
+//        Ticket[] actual = manager.shouldGetAll("VKO", "LED");
+////        Arrays.sort(actual);
+//        Assertions.assertArrayEquals(expected, actual);
+//    }
 }

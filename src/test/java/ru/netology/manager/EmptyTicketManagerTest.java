@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Ticket;
 
-import java.util.Arrays;
 
 public class EmptyTicketManagerTest {
     private TicketManager manager = new TicketManager();
@@ -22,11 +21,11 @@ public class EmptyTicketManagerTest {
         Assertions.assertArrayEquals(expected, manager.shouldGetAll("VKO", "LED"));
     }
 
-    @Test
-    public void shouldSortByPrice() {
-        Ticket[] expected = new Ticket[]{};
-        Ticket[] actual = manager.shouldGetAll("VKO", "LED");
-//        Arrays.sort(actual);
-        Assertions.assertArrayEquals(expected, actual);
-    }
+//    @Test
+//    public void shouldSortByPrice() {
+//        Ticket[] expected = new Ticket[]{};
+//        Ticket[] actual = manager.shouldGetAll("VKO", "LED");
+////        Arrays.sort(actual);
+//        Assertions.assertArrayEquals(expected, actual);
+//    }
 }

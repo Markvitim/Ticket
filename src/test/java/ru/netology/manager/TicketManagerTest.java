@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Ticket;
 
-import java.util.Arrays;
 
 class TicketManagerTest {
     private TicketManager manager = new TicketManager();
@@ -37,21 +36,22 @@ class TicketManagerTest {
     @Test
     public void shouldRemoveById() {
         manager.shouldRemoveById(2);
-        Ticket[] expected = new Ticket[]{four, third, fifteen, ten, eleven};
-        Assertions.assertArrayEquals(expected, manager.shouldGetAll("VKO", "LED"));
+        Ticket[] expected = new Ticket[]{four, ten, third, eleven, fifteen};
+        Ticket[] actual = manager.shouldGetAll("VKO", "LED");
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
     public void shouldGetAll() {
-        Ticket[] expected = new Ticket[]{four, third, second, fifteen, ten, eleven};
+        Ticket[] expected = new Ticket[]{four, ten, third, eleven, second, fifteen};
         Assertions.assertArrayEquals(expected, manager.shouldGetAll("VKO", "LED"));
     }
 
-    @Test
-    public void shouldSortByPrice() {
-        Ticket[] expected = new Ticket[]{four, ten, third, eleven, second, fifteen};
-        Ticket[] actual = manager.shouldGetAll("VKO", "LED");
-//        Arrays.sort(actual);
-        Assertions.assertArrayEquals(expected, actual);
-    }
+//    @Test
+//    public void shouldSortByPrice() {
+//        Ticket[] expected = new Ticket[]{four, ten, third, eleven, second, fifteen};
+//        Ticket[] actual = manager.shouldGetAll("VKO", "LED");
+////        Arrays.sort(actual);
+//        Assertions.assertArrayEquals(expected, actual);
+//    }
 }

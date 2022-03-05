@@ -3,7 +3,6 @@ package ru.netology.manager;
 import ru.netology.domain.Ticket;
 import ru.netology.repository.TicketRepository;
 
-import java.sql.Array;
 import java.util.Arrays;
 
 public class TicketManager {
