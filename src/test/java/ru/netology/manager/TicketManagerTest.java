@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 import ru.netology.domain.Ticket;
 import ru.netology.domain.TravelTimeComparator;
 
-import java.util.Arrays;
-
 class TicketManagerTest {
     private TicketManager manager = new TicketManager();
     private Ticket first = new Ticket(1, 8000, "DME", "KJA", 4);
@@ -37,32 +35,18 @@ class TicketManagerTest {
 
     @Test
     public void shouldRemoveById() {
+        TravelTimeComparator comparator = new TravelTimeComparator();
         manager.shouldRemoveById(2);
         Ticket[] expected = new Ticket[]{eight, third, four, seven, eleven};
-        Assertions.assertArrayEquals(expected, manager.shouldGetAll("VKO", "LED", Ticket::compareTo));
-    }
-
-    @Test
-    public void shouldGetAll() {
-        Ticket[] expected = new Ticket[]{second, third, four, seven, eleven, eight};
-        Assertions.assertArrayEquals(expected, manager.shouldGetAll("VKO", "LED",
-                Ticket::compareTo));
-    }
-
-    @Test
-    public void shouldSortPrice() {
-        Ticket[] expected = new Ticket[]{seven, four, third, eight, second, eleven};
-        Ticket[] actual = manager.shouldGetAll("VKO", "LED", Ticket::compareTo);
-//        Arrays.sort(actual);
+        Ticket[] actual = manager.shouldGetAll("VKO", "LED", comparator);
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void shouldSortTravelTime() {
+    public void shouldGetAll() {
         TravelTimeComparator comparator = new TravelTimeComparator();
         Ticket[] expected = new Ticket[]{second, eight, third, four, seven, eleven};
         Ticket[] actual = manager.shouldGetAll("VKO", "LED", comparator);
-//        Arrays.sort(actual, comparator);
         Assertions.assertArrayEquals(expected, actual);
     }
 }
