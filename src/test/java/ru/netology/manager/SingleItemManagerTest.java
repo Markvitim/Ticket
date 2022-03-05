@@ -41,7 +41,7 @@ public class SingleItemManagerTest {
     public void shouldSortByPrice() {
         Ticket[] expected = new Ticket[]{eleven};
         Ticket[] actual = manager.shouldGetAll("VKO", "LED");
-        Arrays.sort(actual);
+//        Arrays.sort(actual);
         Assertions.assertArrayEquals(expected, actual);
     }
 }

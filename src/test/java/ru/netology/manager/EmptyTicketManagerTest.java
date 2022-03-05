@@ -26,7 +26,7 @@ public class EmptyTicketManagerTest {
     public void shouldSortByPrice() {
         Ticket[] expected = new Ticket[]{};
         Ticket[] actual = manager.shouldGetAll("VKO", "LED");
-        Arrays.sort(actual);
+//        Arrays.sort(actual);
         Assertions.assertArrayEquals(expected, actual);
     }
 }
