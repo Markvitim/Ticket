@@ -38,7 +38,7 @@ class TicketManagerTest {
     @Test
     public void shouldRemoveById() {
         manager.shouldRemoveById(2);
-        Ticket[] expected = new Ticket[]{third, four, seven, eleven, eight};
+        Ticket[] expected = new Ticket[]{eight, third, four, seven, eleven};
         Assertions.assertArrayEquals(expected, manager.shouldGetAll("VKO", "LED", Ticket::compareTo));
     }
 
@@ -53,7 +53,7 @@ class TicketManagerTest {
     public void shouldSortPrice() {
         Ticket[] expected = new Ticket[]{seven, four, third, eight, second, eleven};
         Ticket[] actual = manager.shouldGetAll("VKO", "LED", Ticket::compareTo);
-        Arrays.sort(actual);
+//        Arrays.sort(actual);
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -62,7 +62,7 @@ class TicketManagerTest {
         TravelTimeComparator comparator = new TravelTimeComparator();
         Ticket[] expected = new Ticket[]{second, eight, third, four, seven, eleven};
         Ticket[] actual = manager.shouldGetAll("VKO", "LED", comparator);
-        Arrays.sort(actual, comparator);
+//        Arrays.sort(actual, comparator);
         Assertions.assertArrayEquals(expected, actual);
     }
 }

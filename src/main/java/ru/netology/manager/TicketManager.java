@@ -3,6 +3,7 @@ package ru.netology.manager;
 import ru.netology.domain.Ticket;
 import ru.netology.repository.TicketRepository;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 public class TicketManager {
@@ -32,7 +33,9 @@ public class TicketManager {
                 tmp[tmp.length - 1] = ticket;
                 result = tmp;
             }
+//            Arrays.sort(result, comparator);
         }
         return result;
+        Arrays.sort(result, comparator);
     }
 }
