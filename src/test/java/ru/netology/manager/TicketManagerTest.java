@@ -46,12 +46,4 @@ class TicketManagerTest {
         Ticket[] expected = new Ticket[]{four, ten, third, eleven, second, fifteen};
         Assertions.assertArrayEquals(expected, manager.shouldGetAll("VKO", "LED"));
     }
-
-//    @Test
-//    public void shouldSortByPrice() {
-//        Ticket[] expected = new Ticket[]{four, ten, third, eleven, second, fifteen};
-//        Ticket[] actual = manager.shouldGetAll("VKO", "LED");
-////        Arrays.sort(actual);
-//        Assertions.assertArrayEquals(expected, actual);
-//    }
 }

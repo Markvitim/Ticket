@@ -22,24 +22,9 @@ public class SingleItemManagerTest {
         Assertions.assertArrayEquals(expected, manager.shouldGetAll("VKO", "LED"));
     }
 
-
     @Test
     public void shouldGetAll() {
         Ticket[] expected = new Ticket[]{eleven};
         Assertions.assertArrayEquals(expected, manager.shouldGetAll("VKO", "LED"));
     }
-
-    @Test
-    public void shouldGetAlVkoKja() {
-        Ticket[] expected = new Ticket[]{};
-        Assertions.assertArrayEquals(expected, manager.shouldGetAll("VKO", "KJA"));
-    }
-
-//    @Test
-//    public void shouldSortByPrice() {
-//        Ticket[] expected = new Ticket[]{eleven};
-//        Ticket[] actual = manager.shouldGetAll("VKO", "LED");
-////        Arrays.sort(actual);
-//        Assertions.assertArrayEquals(expected, actual);
-//    }
 }
